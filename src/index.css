@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAFAF7;
+  --bg-alt: #F1F0EA;
+  --surface: #FFFFFF;
+  --text: #14171C;
+  --text-muted: #5B606B;
+  --border: #E1DFD6;
+  --primary: #2451E8;
+  --primary-soft: #E8EDFD;
+  --accent: #0B9C8E;
+  --accent-soft: #E3F5F2;
+}
+
+.dark {
+  --bg: #0A0D13;
+  --bg-alt: #0F131C;
+  --surface: #12161F;
+  --text: #E8EAED;
+  --text-muted: #8B909C;
+  --border: #212633;
+  --primary: #6C8CFF;
+  --primary-soft: #182140;
+  --accent: #2FD9C7;
+  --accent-soft: #0E2622;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--accent-soft);
+  color: var(--text);
+}
+
+.dot-grid {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.no-cursor-default {
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
